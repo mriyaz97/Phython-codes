@@ -1,0 +1,20 @@
+1]
+##https://www.hackerrank.com/challenges/beautiful-triplets/problem
+##input 
+nd = input().split()
+
+k = int(nd[0])
+
+d = int(nd[1])
+n = list(map(int, input().rstrip().split()))
+
+count = 0
+for i in n:
+    j = i+d
+    k = i+(2*d)
+    list_1 = []
+    if j in n and k in n :
+        count +=1
+print(count)
+
+2]
