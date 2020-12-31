@@ -18,3 +18,54 @@ for i in n:
 print(count)
 
 2]
+##https://www.hackerrank.com/challenges/halloween-sale/problem
+## reverse approach helps here 
+
+pdms = input().split()
+
+p = int(pdms[0])
+
+d = int(pdms[1])
+
+m = int(pdms[2])
+
+s = int(pdms[3])
+
+count = 0
+while s > 0:
+    s -= p
+    p -= d
+    if p <m:
+        p = m
+    if s < 0:
+        break
+    count += 1
+print(count)
+
+3]
+##https://www.hackerrank.com/challenges/append-and-delete/problem
+
+first_str = input()
+second_str =input()
+actions = int(input())
+
+first_list = list(first_str)
+second_list =  list(second_str)
+actual_list = []
+
+for i in range(min(len(first_list),len(second_list))):
+    if first_list[i]==second_list[i]:
+        actual_list.append(first_list[i])
+    elif first_list[i]!=second_list[i]:
+        break
+
+actions -= (len(first_list)-len(actual_list))
+
+for i in range(len(actual_list),len(second_list)):
+    actual_list.append(second_list[i])
+    actions -=1
+
+if actions>=0:
+    print("Yes")
+else:
+    print("No")
